@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/ProjectAthenaa/sonic-core/protos/monitor"
+	monitor2 "github.com/ProjectAthenaa/supreme-monitor/monitor"
 	"google.golang.org/grpc"
 	"log"
 	"net"
@@ -22,7 +23,7 @@ func main(){
 	}
 	server := grpc.NewServer()
 
-	monitor.RegisterMonitorServer(server, monitor.Server{})
+	monitor.RegisterMonitorServer(server, monitor2.Server{})
 	if err := server.Serve(lis); err != nil{
 		log.Fatal(err)
 	}
