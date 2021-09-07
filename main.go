@@ -22,7 +22,7 @@ func main(){
 	}
 	server := grpc.NewServer()
 
-	monitor.RegisterMonitorServer(server, monitor2.Server{})
+	monitor.RegisterMonitorServer(server, monitor.Server{})
 	if err := server.Serve(lis); err != nil{
 		log.Fatal(err)
 	}
