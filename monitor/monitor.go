@@ -4,6 +4,7 @@ import (
 	monitor_controller "github.com/ProjectAthenaa/sonic-core/protos/monitorController"
 	"github.com/ProjectAthenaa/sonic-core/sonic/base"
 	"github.com/ProjectAthenaa/sonic-core/sonic/face"
+	config "github.com/ProjectAthenaa/supreme/config"
 	"github.com/prometheus/common/log"
 )
 
@@ -24,7 +25,8 @@ type Task struct {
 func NewTask(data *monitor_controller.Task) (*Task, error) {
 	task := &Task{
 		BMonitor:    &base.BMonitor{Data: data},
-		category:    data.Metadata["category"],
+		category:    data.Metadata[*config.Module.Fields[0].FieldKey],
+		Size:        data.Metadata[*config.Module.Fields[3].FieldKey],
 		keywords:    data.GetKeywords(),
 		channelName: data.RedisChannel,
 	}

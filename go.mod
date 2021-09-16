@@ -3,7 +3,8 @@ module github.com/ProjectAthenaa/supreme-monitor
 go 1.17
 
 require (
-	github.com/ProjectAthenaa/sonic-core v0.0.0-20210907054030-da1f02b40a2a
+	github.com/ProjectAthenaa/sonic-core v0.0.0-20210914181846-a348cf4eff99
+	github.com/ProjectAthenaa/supreme v0.0.0-20210916002429-c6aa301a127c
 	github.com/json-iterator/go v1.1.11
 	github.com/prometheus/common v0.4.0
 	google.golang.org/grpc v1.40.0
@@ -12,7 +13,7 @@ require (
 require (
 	entgo.io/contrib v0.1.0 // indirect
 	entgo.io/ent v0.9.1 // indirect
-	github.com/99designs/gqlgen v0.13.0 // indirect
+	github.com/99designs/gqlgen v0.14.0 // indirect
 	github.com/DataDog/zstd v1.4.8 // indirect
 	github.com/agnivade/levenshtein v1.1.1 // indirect
 	github.com/alecthomas/template v0.0.0-20190718012654-fb15b899a751 // indirect
@@ -31,16 +32,16 @@ require (
 	github.com/hashicorp/errwrap v1.1.0 // indirect
 	github.com/hashicorp/go-multierror v1.1.1 // indirect
 	github.com/klauspost/compress v1.13.4 // indirect
-	github.com/lib/pq v1.10.2 // indirect
+	github.com/lib/pq v1.10.3 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/sirupsen/logrus v1.8.1 // indirect
-	github.com/thoas/go-funk v0.9.0 // indirect
+	github.com/thoas/go-funk v0.9.1 // indirect
 	github.com/useflyent/fhttp v0.0.0-20210801005649-f160dd923789 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
 	github.com/valyala/fastrand v1.0.0 // indirect
-	github.com/vektah/gqlparser/v2 v2.1.0 // indirect
+	github.com/vektah/gqlparser/v2 v2.2.0 // indirect
 	github.com/viney-shih/go-lock v1.1.1 // indirect
 	github.com/vmihailenco/msgpack/v5 v5.3.4 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
@@ -52,7 +53,7 @@ require (
 	golang.org/x/text v0.3.7 // indirect
 	golang.org/x/tools v0.1.5 // indirect
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
-	google.golang.org/genproto v0.0.0-20210830153122-0bac4d21c8ea // indirect
+	google.golang.org/genproto v0.0.0-20210909211513-a8c4777a87af // indirect
 	google.golang.org/protobuf v1.27.1 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

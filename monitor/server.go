@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	rdb = core.Base.GetRedis("cache")
+	rdb         = core.Base.GetRedis("cache")
 	proxyClient proxy_rater.ProxyRaterClient
 )
 
@@ -20,10 +20,10 @@ type Server struct {
 	monitor.UnimplementedMonitorServer
 }
 
-func init(){
-	if os.Getenv("DEBUG") == "1"{
+func init() {
+	if os.Getenv("DEBUG") == "1" {
 		conn, err := grpc.Dial("localhost:5000", grpc.WithInsecure())
-		if err != nil{
+		if err != nil {
 			panic(err)
 		}
 
@@ -32,7 +32,7 @@ func init(){
 	}
 
 	conn, err := grpc.Dial("proxy-rater.general.svc.cluster.local:3000", grpc.WithInsecure())
-	if err != nil{
+	if err != nil {
 		panic(err)
 	}
 	proxyClient = proxy_rater.NewProxyRaterClient(conn)
@@ -44,7 +44,9 @@ func (s Server) Start(ctx context.Context, task *monitor_controller.Task) (*moni
 		return nil, err
 	}
 
-	t.Start(product.SiteNewBalance,proxyClient)
+	if err = t.Start(product.SiteNewBalance, proxyClient); err != nil {
+		return &monitor_controller.BoolResponse{Stopped: true}, err
+	}
 
 	return &monitor_controller.BoolResponse{
 		Stopped: false,
