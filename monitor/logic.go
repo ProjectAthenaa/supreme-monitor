@@ -3,6 +3,7 @@ package monitor
 import (
 	"fmt"
 	"github.com/json-iterator/go"
+	"github.com/prometheus/common/log"
 	"strconv"
 	"strings"
 )
@@ -26,6 +27,8 @@ func (tk *Task) iteration() error {
 	if err != nil{
 		return err
 	}
+
+	log.Info(tk.keywords)
 
 	outer:
 	for _, data := range stockArray.ProductsAndCategories[tk.category]{
@@ -73,3 +76,9 @@ func (tk *Task) GetProduct(dataIn ProductData) error{
 	}
 	return nil
 }
+
+//HD6QH:H2ZP10D3:194.163.222.98:8682
+//HD6QH:H2ZP10D3:194.163.222.99:8683
+//HD6QH:H2ZP10D3:194.163.222.100:8684
+//HD6QH:H2ZP10D3:194.163.222.101:8685
+//HD6QH:H2ZP10D3:194.163.222.102:8686
